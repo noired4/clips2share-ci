@@ -20,7 +20,7 @@ jobs:
           cd clips2share
           git config --global user.name "noired4"
           git config --global user.email "noired@users.noreply.codeberg.org"
-          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/noired4/clips2share.git
+          git remote set-url origin https://noired4:${{ secrets.GH_PUSH_TOKEN }}@github.com/noired4/clips2share.git
 
           echo "Adding Codeberg remote..."
           git remote add codeberg https://codeberg.org/noired/clips2share.git
