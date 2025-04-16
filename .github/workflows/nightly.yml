@@ -18,7 +18,7 @@ jobs:
         run: |
           git clone https://github.com/noired4/clips2share.git
           cd clips2share
-          git config --global user.name "noired"
+          git config --global user.name "noired4"
           git config --global user.email "noired@users.noreply.codeberg.org"
 
           echo "Adding Codeberg remote..."
