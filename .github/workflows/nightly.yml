@@ -62,11 +62,11 @@ jobs:
             fi
         
 
-      - name: Check for recent commits in dev/integration
+      - name: Check for recent commits in feature/docker
         id: recent_changes
         run: |
           cd clips2share
-          git checkout dev/integration
+          git checkout feature/docker
           COMMITS=$(git log --since="1 day ago" --pretty=oneline)
           echo "Found commits:"
           echo "$COMMITS"
@@ -78,11 +78,11 @@ jobs:
             echo "skip_build=false" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Build Docker image from dev/integration
+      - name: Build Docker image from feature/docker
         if: steps.recent_changes.outputs.skip_build == 'false'
         run: |
           cd clips2share
-          git checkout dev/integration
+          git checkout feature/docker
           docker build -t clips2share:dev .
           docker tag clips2share:dev ghcr.io/noired4/clips2share:dev
 
